@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>esercizio 3</title>
+</head>
+<body>
+	<form id="form" method="get">
+		<label for="userNum">Inserisci un numero: </label>
+		
+		<input type="number" id="userNum" name="userNum">
+
+		<input type="submit" id="subBtn" value="Submit">
+
+		<button id="reset">Reset</button>
+	</form>
+	<script type="text/javascript">
+
+		let form = document.querySelector("form")
+		let resetBtn = document.querySelector("#reset")
+
+		function generateRandom(min = 0, max = 100) {
+		    let difference = max - min; 
+		    let rand = Math.random();
+		    rand = Math.floor( rand * difference);
+		    rand = rand + min;
+		    return rand;
+		}
+
+
+		console.log(generateRandom());
+		let randNum = generateRandom()
+
+	
+		form.addEventListener("submit", function(event){
+			event.preventDefault()
+			let numInput = document.querySelector("#userNum")
+			let numValue = numInput.value
+			
+			numValue = parseInt(numValue)
+			console.log(typeof numValue)
+			if (numValue > randNum){
+				alert("Numero troppo alto!")
+			}else{
+				if (numValue < randNum){
+					alert("Numero troppo basso!")
+				}else{
+					alert("Numero indovinato!")
+				}
+			}	
+		})
+
+		resetBtn.addEventListener("click", function(event){
+			event.preventDefault();
+			numValue = 0
+			generateRandom()
+		})
+
+	</script>
+</body>
+</html>
