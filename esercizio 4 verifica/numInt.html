@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <title>Esercizio 4</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+  <form name="frm" id="frm" style="position:relative; width:40%; left:30%; top:100px; text-align:center">
+    <h2>controllo numero primo</h2>
+    <p>
+      <label for="campo_n">numero</label>
+      <input type="text" id="campo_n" size="10" />
+    </p>
+    <p>
+      <input type="button" value=" controllo " onclick = "nPrimo(campo_n.value)" />
+    </p>
+  </form>
+  <script>
+    function nPrimo(numero){
+      if (isNaN(numero)){
+        alert(numero + " non è un numero.")
+        return
+      }
+      if (parseInt(numero) != numero){
+        alert(numero + " non è un numero intero.")
+        return
+      }
+      if (numero<2){
+        alert("il numero dev'essere maggiore di 1.")
+        return
+      }
+      var divisore = 1;
+      if (numero>2){
+        if ((numero & 1)==0)
+          divisore = 2;
+          else
+          if (numero >= 9)
+            for (i=3; i<= Math.sqrt(numero); i+=2)
+              if ((numero % i)==0){
+                divisore = i
+                break
+              }
+            }
+        if (divisore==1)
+          alert(numero+" è un numero primo.")
+        else
+          alert(numero+" non è un numero primo.")      
+    }
+  </script>
+</body>
+</html>

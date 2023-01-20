@@ -1,0 +1,10 @@
+*{
+	margin:10px;
+	box-sizing: border-box;
+}
+
+#output{
+	width: 500px;
+	height: 300px;
+	border: 4px solid black;
+}

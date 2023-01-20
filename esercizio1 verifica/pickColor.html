@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+ 	 <meta name="keywords" content="HTML, CSS, JavaScript">
+ 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<title>
+		
+</title>
+</head>
+<body>
+	<form id="#form" method="get">
+			<label for="hexcode">codice colore esadecimale: </label>
+			<input type="text" id="hexCode" name="hexColor">
+			<input type="submit" value="Submit" id="subBtn">
+		</form>
+	</div>
+	<div id="output"></div> 
+
+	<script type="text/javascript">
+	
+		function color(colore){
+				document.getElementById("output").style.backgroundColor = colore
+		}
+
+		let resetBtn = document.querySelector("#reset")
+		let output = document.querySelector("#output");
+		let form = document.querySelectorAll("#form")
+		
+		subBtn.addEventListener("click", function(event){
+			event.preventDefault()
+			let hexInput = document.querySelector("#hexCode")
+			let hexValue = hexInput.value
+			output.style.backgroundColor = hexValue
+		})
+
+	</script>
+
+</body>
+</html>
